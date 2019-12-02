@@ -1,0 +1,13 @@
+.todo-footer {
+    margin: 0 auto;
+    background-color: #333333;
+    color: #eeeeee;
+    font-size: 16px;
+
+}
+
+.todo-footer p {
+    text-align: center;
+    line-height: 1.8;
+    margin: 0
+}
