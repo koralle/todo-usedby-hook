@@ -22,7 +22,6 @@ const Form = (props) => {
         e.preventDefault();
         props.add(todoTitle,todoContent);
         resetInputField();
-        console.log("ok");
     }
 
     return (
