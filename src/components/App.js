@@ -2,31 +2,30 @@ import React, {useState} from 'react';
 import './App.css';
 import Header from './Header';
 import Form from './Form'
-import Footer from './Footer'
 import ToDoList from './ToDoList'
 
 const App = () => {
-    const [todoList, setTodoList] = useState([]);
+    const [toDoList, setToDoList] = useState([]);
 
     const addToDoList = (Title, Content) => {
-        setTodoList(todoList.concat({"title": Title, "content": Content}));
+        setToDoList(toDoList.concat({"title": Title, "content": Content}));
     }
 
     const deleteToDoList = (index) => {
-        setTodoList(todoList.filter(item => todoList[index] !== item));
+        setToDoList(toDoList.filter(item => toDoList[index] !== item));
     }
 
 
     return (
-        <div className="todo-app">
+        <div className="toDo-app">
             <Header headerTitle="To Do List Used By Hooks"/>
 
-            <div className="todo-app-body">
-                <Form add={addToDoList}/>
-                <ToDoList list={todoList} delete={deleteToDoList}/>
+            <div className="toDo-app-body container">
+                <div className="toDo-main">
+                    <Form add={addToDoList}/>
+                    <ToDoList list={toDoList} delete={deleteToDoList}/>
+                </div>
             </div>
-
-            <Footer footerText="Top" />
         </div>
     );
 }

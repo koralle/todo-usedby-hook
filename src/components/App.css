@@ -1,5 +1,3 @@
-.todo-app-body {
-  width: 600px;
-  margin: 0 auto;
-  background-color: violet;
+.toDo-app-body {
+  padding-bottom: 55px;
 }

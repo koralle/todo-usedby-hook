@@ -3,32 +3,31 @@ import './ToDoList.css'
 
 const ToDoList = (props) => {
 
-    const callDeleteToDoList = (index) => {
-        props.delete(index);
-    }
-
-    const todoListItems = props.list.map(
+    const toDoListItems = props.list.map(
         (item, i) => {
             return (
-                <li key={i}>
-                    <div>
-                        <h1>Title: {item.title}</h1>
-                        <p>Content: {item.content}</p>
+                <div key={i} className="card toDo-item">
+                    <div className="card-body">
+                        <h5 className="card-title">Title: {item.title}</h5>
+                        <p className="card-text">Content: {item.content}</p>
+                        <button className="btn btn-danger"
+                            onClick={() => props.delete(i)}
+                        >
+                            Delete
+                        </button>
                     </div>
-                    <button onClick={() => props.delete(i)}>
-                        Delete
-                    </button>
-                </li>
+                </div>
             );
         }
     );
 
     return (
-        <div>
-            <h1>Your Tasks</h1>
-            <ul>
-                {todoListItems}
-            </ul>
+        <div className="toDo-List">
+            <h1>Your Tasks: {props.list.length}</h1>
+
+            <div>
+                {toDoListItems}
+            </div>
         </div>
     );
 }

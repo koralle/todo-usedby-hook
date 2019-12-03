@@ -1,5 +1,21 @@
-.app-footer {
+.toDo-footer {
     width: 100%;
     text-align: center;
-    background-color: thistle;
+    background-color: #333333;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
 }
+
+.toDo-footer p {  
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    color: #333333;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 40px;
+    margin: 0;
+    padding: 0;
+}
+

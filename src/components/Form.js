@@ -2,60 +2,58 @@ import React, {useState} from 'react';
 import './Form.css'
 
 const Form = (props) => {
-    const [todoTitle, setTodoTitle] = useState("");
-    const [todoContent, setTodoContent] = useState("");
+    const [toDoTitle, setToDoTitle] = useState("");
+    const [toDoContent, setToDoContent] = useState("");
 
-    const handleTodoTitleInputChange = (e) => {
-        setTodoTitle(e.target.value);
+    const handleToDoTitleInputChange = (e) => {
+        setToDoTitle(e.target.value);
     }
 
-    const handleTodoContentInputChange = (e) => {
-        setTodoContent(e.target.value);
+    const handleToDoContentInputChange = (e) => {
+        setToDoContent(e.target.value);
     }
 
     const resetInputField = () => {
-        setTodoTitle("");
-        setTodoContent("");
+        setToDoTitle("");
+        setToDoContent("");
     }
 
     const callAddToDoList = (e) => {
         e.preventDefault();
-        props.add(todoTitle,todoContent);
+        props.add(toDoTitle,toDoContent);
         resetInputField();
     }
 
     return (
-        <div>
-            <form>
-                <ul className="todo-form">
-                    <li className="todo-form-title"> 
-                        <label>
-                            <span>Title:</span>
-                            <input type="text"
-                                onChange={handleTodoTitleInputChange}
-                                value={todoTitle}
-                            />
-                        </label>
-                    </li>
-                    <li className="todo-form-detail">
-                        <label>
-                            <span>Detail:</span>
-                            <textarea type="text"
-                                onChange={handleTodoContentInputChange}
-                                value={todoContent}
-                            />
-                        </label>
-                    </li>
-                    <li className="todo-form-add">
-                        <button type="submit" onClick={callAddToDoList}>
-                            ADD
-                        </button>
-                    </li>
-                </ul>
-
-
-            </form>
-        </div>
+        <form className="toDo-form">
+            <div className="toDo-form-title input-group"> 
+                <div className="input-group-prepend">
+                    <span className="input-group-text">Title</span>
+                </div>
+                <input type="text"
+                    className="form-control shadow"
+                    onChange={handleToDoTitleInputChange}
+                    value={toDoTitle}
+                />
+            </div>
+            <div className="toDo-form-detail input-group">
+                <div className="input-group-prepend">
+                    <span className="input-group-text">Detail</span>
+                </div>
+                <textarea className="form-control shadow"
+                    aria-label="Detail"
+                    onChange={handleToDoContentInputChange}
+                    value={toDoContent}
+                ></textarea>
+            </div>
+            <div className="toDo-form-add">
+                <button className="btn btn-success"
+                    type="submit" onClick={callAddToDoList}
+                >
+                    ADD
+                </button>
+            </div>
+        </form>
     );
 }
 
