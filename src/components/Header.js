@@ -4,9 +4,9 @@ import './Header.css'
 const Header = (props) => {
 
     return (
-        <div className="todo-header">
+        <header className="app-header">
             <h1>{props.headerTitle}</h1>
-        </div>
+        </header>
     );
 }
 

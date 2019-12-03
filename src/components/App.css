@@ -1,5 +1,5 @@
-body {
-  background-color: wheat;
-  
+.todo-app-body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: violet;
 }
-

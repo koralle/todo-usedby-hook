@@ -12,15 +12,19 @@ const App = () => {
         setTodoList(todoList.concat({"title": Title, "content": Content}));
     }
 
+    const deleteToDoList = (index) => {
+        setTodoList(todoList.filter(item => todoList[index] !== item));
+    }
 
 
     return (
-        <div className="ToDoList">
+        <div className="todo-app">
             <Header headerTitle="To Do List Used By Hooks"/>
 
-            <Form add={addToDoList}/>
-
-            <ToDoList todoList={todoList}/>
+            <div className="todo-app-body">
+                <Form add={addToDoList}/>
+                <ToDoList list={todoList} delete={deleteToDoList}/>
+            </div>
 
             <Footer footerText="Top" />
         </div>

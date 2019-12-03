@@ -25,24 +25,26 @@ const Form = (props) => {
     }
 
     return (
-        <div className="todo-form">
-
-            <p> Please input your task.</p>
+        <div>
             <form>
-                <ul>
+                <ul className="todo-form">
                     <li className="todo-form-title"> 
-                        <label>Title:</label>
-                        <input type="text"
-                            onChange={handleTodoTitleInputChange}
-                            value={todoTitle}
-                        />
+                        <label>
+                            <span>Title:</span>
+                            <input type="text"
+                                onChange={handleTodoTitleInputChange}
+                                value={todoTitle}
+                            />
+                        </label>
                     </li>
                     <li className="todo-form-detail">
-                        <label>Detail:</label>
-                        <textarea type="text"
-                            onChange={handleTodoContentInputChange}
-                            value={todoContent}
-                        />
+                        <label>
+                            <span>Detail:</span>
+                            <textarea type="text"
+                                onChange={handleTodoContentInputChange}
+                                value={todoContent}
+                            />
+                        </label>
                     </li>
                     <li className="todo-form-add">
                         <button type="submit" onClick={callAddToDoList}>
